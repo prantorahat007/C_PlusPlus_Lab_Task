@@ -1,0 +1,46 @@
+#include <iostream>
+#include<string>
+using namespace std;
+
+class rectangle
+{
+public:
+    double length;
+    double width;
+
+    void printDetail()
+    {
+        cout<<"\nLength: "<<length<<endl;
+        cout<<"Width: "<<width<<endl;
+        cout<<"Area: "<<length*width<<endl;
+    }
+};
+
+int main()
+{
+    rectangle r;
+    r.length=10.0;
+    r.width=15.0;
+    r.printDetail();
+
+    rectangle r1;
+    r1.length=5.0;
+    r1.width=10.0;
+    r1.printDetail();
+
+    rectangle r2;
+    r2.length=25.0;
+    r2.width=10.0;
+    r2.printDetail();
+
+
+    rectangle r3;
+    r3.length=5.0;
+    r3.width=10.0;
+    r3.printDetail();
+
+    return 0;
+}
+
+
+

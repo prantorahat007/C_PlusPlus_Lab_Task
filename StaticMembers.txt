@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+
+class Demo
+{
+static int _count;
+
+public:
+
+    int i=0;
+    Demo();
+    static void setCount(int j);
+    static int getCount();
+};
+
+Demo::Demo()
+{
+    cout<<"Constructor Called\n";
+    _count++;
+    i++;
+}
+
+int Demo::_count;
+
+void Demo::setCount(int j)
+{
+    _count=j;
+}
+
+int Demo::getCount()
+{
+    return _count;
+}
+
+int main()
+{
+    Demo::setCount(5);
+    cout<<"_count = "<<Demo::getCount()<<endl;
+    Demo d1,d2;
+    cout<<"d1.i = "<<d1.i<<endl;
+    cout<<"d2.i = "<<d2.i<<endl;
+    cout<<"_count = "<<Demo::getCount()<<endl;
+
+    return 0;
+}

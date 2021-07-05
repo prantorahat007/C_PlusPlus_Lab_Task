@@ -1,0 +1,100 @@
+#include <iostream>
+using namespace std;
+
+class Box
+{
+private:
+    double length;
+    double height;
+    double width;
+
+public:
+    Box();
+    Box(double l, double h, double w);
+    ~Box();
+    
+    void setLength(double l);
+    void setHeight(double h);
+    void setWidth(double w);
+    double getLength();
+    double getHeight();
+    double getWidth();
+    double area();
+    double volume();
+};
+
+
+Box::Box()
+{
+    cout<<"Default Constructor\n";
+}
+
+Box::Box(double l, double h, double w)
+{
+    length=l;
+    height=h;
+    width=w;
+}
+
+Box::~Box()
+{
+    cout<<"Destructor called\n";
+}
+
+void Box::setLength(double l)
+{
+    if(l>0)
+        length=l;
+    else
+        cout<<"Invalid Length\n";
+}
+
+void Box::setHeight(double h)
+{
+    height=h;
+}
+
+void Box::setWidth(double w)
+{
+    width=w;
+}
+
+double Box::getLength()
+{
+    return length;
+}
+
+double Box::getHeight()
+{
+    return height;
+}
+
+double Box::getWidth()
+{
+    return width;
+}
+
+double Box::area()
+{
+    return 2*(length*height+height*width+width*length);
+}
+
+double Box::volume()
+{
+    return length*height*width;
+}
+
+
+int main()
+{
+    Box b;
+    b.setLength(5);
+    b.setHeight(10);
+    b.setWidth(15);
+
+    cout<<"Area: "<<b.area()<<endl;
+    cout<<"Volume: "<<b.volume()<<endl;
+
+
+    return 0;
+}

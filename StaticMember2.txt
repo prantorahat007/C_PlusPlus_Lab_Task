@@ -1,0 +1,49 @@
+#include <iostream>
+#include<string>
+using namespace std;
+
+class student
+{
+public:
+
+    static int _count;
+
+    string ID;
+    student()
+    {
+        _count++;
+        cout<<"Constructor\n";
+    }
+
+
+    static int getCount();
+
+};
+
+int student::getCount()
+{
+    return _count;
+}
+
+
+int student::_count;
+
+
+int main()
+{
+    cout<<student::getCount()<<endl;
+
+    cout<<student::_count<<endl;
+    student::_count=5;
+
+    cout<<"Hello\n";
+
+    student s1;
+    cout<<student::_count<<endl;
+    student s2;
+    cout<<student::_count<<endl;
+    student s3;
+    cout<<s3.getCount()<<endl;
+
+    return 0;
+}

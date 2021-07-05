@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class Box
+{
+public:
+    double length;
+    double height;
+    double width;
+    Box()
+    {
+        cout<<"Default Constructor\n";
+    }
+
+    Box(double l, double h, double w)
+    {
+        cout<<"Parameterized Constructor\n";
+        length=l;
+        height=h;
+        width=w;
+    }
+
+    ~Box()
+    {
+        cout<<"Destructor\n";
+    }
+};
+
+
+
+int main()
+{
+    //Box b;
+    Box *b1=new Box(10,14,15);
+    delete b1;
+
+    return 0;
+}

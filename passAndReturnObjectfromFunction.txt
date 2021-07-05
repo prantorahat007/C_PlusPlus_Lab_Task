@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+
+class Box
+{
+public:
+    double length;
+    double height;
+    double width;
+    Box(){}
+    Box(double l, double h, double w);
+    double getLength();
+    double getHeight();
+    double getWidth();
+    void print();
+};
+
+Box::Box(double l, double h, double w)
+{
+    length=l;
+    height=h;
+    width=w;
+}
+
+double Box::getLength()
+{
+    return length;
+}
+
+double Box::getHeight()
+{
+    return height;
+}
+
+
+double Box::getWidth()
+{
+    return width;
+}
+
+void Box::print()
+{
+    cout<<length<<", "<<height<<", "<<width<<endl;
+}
+
+
+Box sum(Box &a, Box &b)
+{
+    Box c;
+    c.length=a.length+b.length;
+    c.height=a.height+b.height;
+    c.width=a.width+b.width;
+
+    return c;
+}
+
+
+int main()
+{
+    Box b(10,12,13);
+    Box b1(13,14,15);
+    Box b3;
+
+    b3=sum(b,b1);
+
+    b.print();
+    b1.print();
+    b3.print();
+
+    return 0;
+}
